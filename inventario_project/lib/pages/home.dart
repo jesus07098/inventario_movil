@@ -1,5 +1,7 @@
 import 'package:day14/pages/consulta_precios.dart';
+
 import 'package:day14/pages/login.dart';
+import 'package:day14/pages/mangas.dart';
 import 'package:day14/pages/tanques.dart';
 import 'package:flutter/material.dart';
 
@@ -130,9 +132,13 @@ class _HomePageState extends State<HomePage> {
   _body(int pagina) {
     switch (pagina) {
       case 1:
-        return Tanques();
+        return HomePage();
       case 2:
         return preciosAPI();
+        case 3:
+        return Tanques();
+      case 4:
+        return  Mangas();
 
       default:
     }

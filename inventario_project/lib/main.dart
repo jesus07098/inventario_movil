@@ -1,5 +1,5 @@
+import 'package:day14/pages/home.dart';
 import 'package:day14/pages/login.dart';
-import 'package:day14/pages/principal.dart';
 import 'package:flutter/material.dart';
 
  

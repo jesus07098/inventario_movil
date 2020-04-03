@@ -15,6 +15,19 @@ class preciosAPI extends StatelessWidget {
         if (snapshot.hasData) {
           return Column(
             children: <Widget>[
+              Container(
+               
+                padding: EdgeInsets.all(15),
+                child: Text(
+                  'Del 28 de marzo al 3 de abril del 2020',
+                
+                  style: TextStyle(
+                    
+                      fontSize: 20,
+                      color: Colors.red[700],
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
               Expanded(
                 child: ListView.builder(
                     itemCount: snapshot.data.length,
