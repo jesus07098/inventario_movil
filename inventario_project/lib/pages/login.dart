@@ -26,10 +26,13 @@ class Login extends StatelessWidget {
                   FadeAnimation(
                       1,
                       Text(
+                   
                         "Iniciar sesión",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 40,
+                        
                         ),
                       )),
                   SizedBox(

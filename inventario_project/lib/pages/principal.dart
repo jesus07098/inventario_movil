@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int pagina=1;
+  int pagina = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -24,65 +24,117 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: _body(pagina),
-     drawer: _crearMenu(),
-          );
-        }
-      
-        Drawer _crearMenu() {
-          return Drawer(
-            child: ListView(
-              children: <Widget>[
-                DrawerHeader(
-                  child: Container(),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/fondoDraw.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(Icons.view_array, color: Colors.black,),
-                  title: Text(
-                    'Tanques',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                  onTap: (){
-                    setState(() {
-                      pagina=1;
-                    });
-                    Navigator.pop(context);
-                  },
-                ),
-                Divider(color: Colors.red, thickness: 1.0,),
-                ListTile(
-                  leading: Icon(Icons.monetization_on, color: Colors.black,),
-                  title: Text(
-                    'Precio Combustibles',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                    
-                  ),
-                  onTap: (){
-                    setState(() {
-                      pagina = 2;
-                    });
-                     Navigator.pop(context);
-                  },
-                ),
-                 Divider(color: Colors.red, thickness: 1.0,),
-              ],
+      drawer: _crearMenu(),
+    );
+  }
+
+  Drawer _crearMenu() {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          DrawerHeader(
+            child: Container(),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/fondoDraw.jpg"),
+                fit: BoxFit.cover,
+              ),
             ),
-          );
-        }
-      
-        _body(int pagina) {
-          switch (pagina) {
-           
-            case 1 : return Tanques();
-            case 2 : return preciosAPI();
-              
-             
-            default:
-          }
-        }
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.view_array,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Tanques',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            onTap: () {
+              setState(() {
+                pagina = 1;
+              });
+              Navigator.pop(context);
+            },
+            trailing: Icon(Icons.format_paint),
+          ),
+          Divider(
+            color: Colors.red,
+            thickness: 1.0,
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.ev_station,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Mangas',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            onTap: () {
+              setState(() {
+                pagina = 2;
+              });
+              Navigator.pop(context);
+            },
+          ),
+          Divider(
+            color: Colors.red,
+            thickness: 1.0,
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.monetization_on,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Entregas',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            onTap: () {
+              setState(() {
+                pagina = 2;
+              });
+              Navigator.pop(context);
+            },
+          ),
+          Divider(
+            color: Colors.red,
+            thickness: 1.0,
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.monetization_on,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Precio Combustibles',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            onTap: () {
+              setState(() {
+                pagina = 2;
+              });
+              Navigator.pop(context);
+            },
+          ),
+          Divider(
+            color: Colors.red,
+            thickness: 1.0,
+          ),
+        ],
+      ),
+    );
+  }
+
+  _body(int pagina) {
+    switch (pagina) {
+      case 1:
+        return Tanques();
+      case 2:
+        return preciosAPI();
+
+      default:
+    }
+  }
 }
